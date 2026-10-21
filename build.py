@@ -6,13 +6,14 @@ import json
 root = Path(__file__).resolve().parent
 out = root / 'dist'
 (out / 'data').mkdir(parents=True, exist_ok=True)
-for name in ['index.html','app.js','studio.js','styles.css','studio.css','sw.js','manifest.webmanifest','icon.svg','DATA-LICENSE.md','THIRD-PARTY.md','COPYING']:
+for name in ['index.html','app.js','studio.js','school.js','library.js','school-library.css','styles.css','studio.css','sw.js','manifest.webmanifest','icon.svg','DATA-LICENSE.md','THIRD-PARTY.md','COPYING']:
     shutil.copy2(root / name, out / name)
-for name in ['words.json','grammar.json']:
+for name in ['words.json','grammar.json','grammar-mn.json']:
     shutil.copy2(root / name, out / 'data' / name)
 for path in sorted(root.glob('audio-*.zip')):
     with ZipFile(path) as archive:
         archive.extractall(out)
+shutil.copy2(root / 'audio-audit/cmn-一下.mp3', out / 'audio/cmn-一下.mp3')
 with ZipFile(root / 'studio-assets.zip') as archive:
     archive.extractall(out)
 shutil.copytree(root / 'vendor', out / 'vendor', dirs_exist_ok=True)
@@ -20,7 +21,7 @@ words = json.loads((out / 'data/words.json').read_text(encoding='utf-8'))
 grammar = json.loads((out / 'data/grammar.json').read_text(encoding='utf-8'))
 assert len(words) == len({word['id'] for word in words}) == 11073
 assert sum(map(len, grammar.values())) == 593
-assert len(list((out / 'audio').glob('*.mp3'))) == 10900
+assert len(list((out / 'audio').glob('*.mp3'))) == 10901
 assert len(list((out / 'strokes').glob('*.json'))) >= 4400
 (out / '.nojekyll').touch()
 print('Nahia is ready in dist/')

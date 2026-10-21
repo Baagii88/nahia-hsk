@@ -1,0 +1,14 @@
+{
+  "text": "一下",
+  "requestedLanguage": "zh-CN",
+  "source": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=zh-CN&q=%E4%B8%80%E4%B8%8B",
+  "sourcePage": "https://translate.google.com/?sl=zh-CN&tl=mn&text=%E4%B8%80%E4%B8%8B&op=translate",
+  "provider": "Google Translate TTS",
+  "synthesized": true,
+  "downloadedAt": "2026-10-21",
+  "filename": "cmn-一下.mp3",
+  "mimeType": "audio/mpeg",
+  "bytes": 7488,
+  "sha256": "a7de3e77ae7e9186f688fcf2ed0039e8c2e4aa9641049c97b5d9598145677b49",
+  "listeningReviewed": false
+}

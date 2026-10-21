@@ -1,0 +1,643 @@
+{
+  "wordEntries": 11073,
+  "uniqueHanzi": 3088,
+  "strokesCovered": 3088,
+  "sourceStrokeMatches": 3088,
+  "sourceWordMatches": 11073,
+  "levels": [
+    {
+      "level": "1",
+      "words": 301,
+      "characters": 248
+    },
+    {
+      "level": "2",
+      "words": 203,
+      "characters": 202
+    },
+    {
+      "level": "3",
+      "words": 506,
+      "characters": 481
+    },
+    {
+      "level": "4",
+      "words": 1016,
+      "characters": 808
+    },
+    {
+      "level": "5",
+      "words": 1632,
+      "characters": 1137
+    },
+    {
+      "level": "6",
+      "words": 1810,
+      "characters": 1345
+    },
+    {
+      "level": "7-9",
+      "words": 5605,
+      "characters": 2745
+    }
+  ],
+  "audioFiles": 10900,
+  "audioEntriesCovered": 11071,
+  "missingAudioEntries": [
+    "1:一下",
+    "4:一下"
+  ],
+  "differentReadingsAcrossLevels": [
+    {
+      "hanzi": "好",
+      "entries": [
+        {
+          "level": "1",
+          "pinyin": "hǎo"
+        },
+        {
+          "level": "2",
+          "pinyin": "hǎo"
+        },
+        {
+          "level": "4",
+          "pinyin": "hǎo"
+        },
+        {
+          "level": "5",
+          "pinyin": "hào"
+        }
+      ]
+    },
+    {
+      "hanzi": "还",
+      "entries": [
+        {
+          "level": "1",
+          "pinyin": "hái"
+        },
+        {
+          "level": "3",
+          "pinyin": "huán"
+        }
+      ]
+    },
+    {
+      "hanzi": "看",
+      "entries": [
+        {
+          "level": "1",
+          "pinyin": "kàn"
+        },
+        {
+          "level": "5",
+          "pinyin": "kān"
+        }
+      ]
+    },
+    {
+      "hanzi": "只",
+      "entries": [
+        {
+          "level": "1",
+          "pinyin": "zhī"
+        },
+        {
+          "level": "3",
+          "pinyin": "zhǐ"
+        }
+      ]
+    },
+    {
+      "hanzi": "着",
+      "entries": [
+        {
+          "level": "2",
+          "pinyin": "zhe"
+        },
+        {
+          "level": "4",
+          "pinyin": "zháo"
+        }
+      ]
+    },
+    {
+      "hanzi": "地",
+      "entries": [
+        {
+          "level": "2",
+          "pinyin": "de"
+        },
+        {
+          "level": "3",
+          "pinyin": "dì"
+        }
+      ]
+    },
+    {
+      "hanzi": "啊",
+      "entries": [
+        {
+          "level": "2",
+          "pinyin": "a"
+        },
+        {
+          "level": "4",
+          "pinyin": "ā"
+        }
+      ]
+    },
+    {
+      "hanzi": "得",
+      "entries": [
+        {
+          "level": "2",
+          "pinyin": "de"
+        },
+        {
+          "level": "3",
+          "pinyin": "děi"
+        }
+      ]
+    },
+    {
+      "hanzi": "长",
+      "entries": [
+        {
+          "level": "2",
+          "pinyin": "cháng"
+        },
+        {
+          "level": "3",
+          "pinyin": "zhǎng"
+        }
+      ]
+    },
+    {
+      "hanzi": "头",
+      "entries": [
+        {
+          "level": "2",
+          "pinyin": "tóu"
+        },
+        {
+          "level": "3",
+          "pinyin": "tóu"
+        },
+        {
+          "level": "5",
+          "pinyin": "tou"
+        }
+      ]
+    },
+    {
+      "hanzi": "中",
+      "entries": [
+        {
+          "level": "3",
+          "pinyin": "zhōng"
+        },
+        {
+          "level": "6",
+          "pinyin": "zhòng"
+        }
+      ]
+    },
+    {
+      "hanzi": "为",
+      "entries": [
+        {
+          "level": "3",
+          "pinyin": "wèi"
+        },
+        {
+          "level": "4",
+          "pinyin": "wéi"
+        },
+        {
+          "level": "5",
+          "pinyin": "wéi"
+        }
+      ]
+    },
+    {
+      "hanzi": "种",
+      "entries": [
+        {
+          "level": "3",
+          "pinyin": "zhǒng"
+        },
+        {
+          "level": "4",
+          "pinyin": "zhòng"
+        }
+      ]
+    },
+    {
+      "hanzi": "地方",
+      "entries": [
+        {
+          "level": "3",
+          "pinyin": "dìfang"
+        },
+        {
+          "level": "6",
+          "pinyin": "dìfāng"
+        }
+      ]
+    },
+    {
+      "hanzi": "行",
+      "entries": [
+        {
+          "level": "3",
+          "pinyin": "xíng"
+        },
+        {
+          "level": "5",
+          "pinyin": "háng"
+        }
+      ]
+    },
+    {
+      "hanzi": "卡",
+      "entries": [
+        {
+          "level": "3",
+          "pinyin": "kǎ"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "qiǎ"
+        }
+      ]
+    },
+    {
+      "hanzi": "干",
+      "entries": [
+        {
+          "level": "3",
+          "pinyin": "gàn"
+        },
+        {
+          "level": "4",
+          "pinyin": "gān"
+        },
+        {
+          "level": "5",
+          "pinyin": "gān"
+        }
+      ]
+    },
+    {
+      "hanzi": "当",
+      "entries": [
+        {
+          "level": "4",
+          "pinyin": "dāng"
+        },
+        {
+          "level": "5",
+          "pinyin": "dàng"
+        }
+      ]
+    },
+    {
+      "hanzi": "结果",
+      "entries": [
+        {
+          "level": "4",
+          "pinyin": "jiéguǒ"
+        },
+        {
+          "level": "6",
+          "pinyin": "jiēguǒ"
+        }
+      ]
+    },
+    {
+      "hanzi": "转",
+      "entries": [
+        {
+          "level": "4",
+          "pinyin": "zhuǎn"
+        },
+        {
+          "level": "6",
+          "pinyin": "zhuàn"
+        }
+      ]
+    },
+    {
+      "hanzi": "重",
+      "entries": [
+        {
+          "level": "4",
+          "pinyin": "zhòng"
+        },
+        {
+          "level": "5",
+          "pinyin": "chóng"
+        }
+      ]
+    },
+    {
+      "hanzi": "数",
+      "entries": [
+        {
+          "level": "4",
+          "pinyin": "shù"
+        },
+        {
+          "level": "5",
+          "pinyin": "shǔ"
+        }
+      ]
+    },
+    {
+      "hanzi": "倒",
+      "entries": [
+        {
+          "level": "4",
+          "pinyin": "dào"
+        },
+        {
+          "level": "5",
+          "pinyin": "dǎo"
+        },
+        {
+          "level": "6",
+          "pinyin": "dào"
+        }
+      ]
+    },
+    {
+      "hanzi": "量",
+      "entries": [
+        {
+          "level": "4",
+          "pinyin": "liáng"
+        },
+        {
+          "level": "5",
+          "pinyin": "liàng"
+        }
+      ]
+    },
+    {
+      "hanzi": "落",
+      "entries": [
+        {
+          "level": "4",
+          "pinyin": "luò"
+        },
+        {
+          "level": "6",
+          "pinyin": "là"
+        }
+      ]
+    },
+    {
+      "hanzi": "背",
+      "entries": [
+        {
+          "level": "4",
+          "pinyin": "bēi"
+        },
+        {
+          "level": "5",
+          "pinyin": "bèi"
+        }
+      ]
+    },
+    {
+      "hanzi": "待",
+      "entries": [
+        {
+          "level": "4",
+          "pinyin": "dāi"
+        },
+        {
+          "level": "6",
+          "pinyin": "dài"
+        }
+      ]
+    },
+    {
+      "hanzi": "精神",
+      "entries": [
+        {
+          "level": "5",
+          "pinyin": "jīngshen"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "jīngshén"
+        }
+      ]
+    },
+    {
+      "hanzi": "传",
+      "entries": [
+        {
+          "level": "5",
+          "pinyin": "chuán"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "zhuàn"
+        }
+      ]
+    },
+    {
+      "hanzi": "调",
+      "entries": [
+        {
+          "level": "5",
+          "pinyin": "tiáo"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "diào"
+        }
+      ]
+    },
+    {
+      "hanzi": "涨",
+      "entries": [
+        {
+          "level": "5",
+          "pinyin": "zhǎng"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "zhàng"
+        }
+      ]
+    },
+    {
+      "hanzi": "冲",
+      "entries": [
+        {
+          "level": "5",
+          "pinyin": "chōng"
+        },
+        {
+          "level": "6",
+          "pinyin": "chòng"
+        }
+      ]
+    },
+    {
+      "hanzi": "结",
+      "entries": [
+        {
+          "level": "5",
+          "pinyin": "jié"
+        },
+        {
+          "level": "6",
+          "pinyin": "jiē"
+        }
+      ]
+    },
+    {
+      "hanzi": "挑",
+      "entries": [
+        {
+          "level": "5",
+          "pinyin": "tiāo"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "tiǎo"
+        }
+      ]
+    },
+    {
+      "hanzi": "划",
+      "entries": [
+        {
+          "level": "5",
+          "pinyin": "huá"
+        },
+        {
+          "level": "6",
+          "pinyin": "huà"
+        }
+      ]
+    },
+    {
+      "hanzi": "炸",
+      "entries": [
+        {
+          "level": "5",
+          "pinyin": "zhá"
+        },
+        {
+          "level": "6",
+          "pinyin": "zhà"
+        }
+      ]
+    },
+    {
+      "hanzi": "扇",
+      "entries": [
+        {
+          "level": "5",
+          "pinyin": "shān"
+        },
+        {
+          "level": "6",
+          "pinyin": "shàn"
+        }
+      ]
+    },
+    {
+      "hanzi": "尽",
+      "entries": [
+        {
+          "level": "6",
+          "pinyin": "jìn"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "jǐn"
+        }
+      ]
+    },
+    {
+      "hanzi": "圈",
+      "entries": [
+        {
+          "level": "6",
+          "pinyin": "quān"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "juān"
+        }
+      ]
+    },
+    {
+      "hanzi": "折",
+      "entries": [
+        {
+          "level": "6",
+          "pinyin": "zhé"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "shé"
+        }
+      ]
+    },
+    {
+      "hanzi": "率",
+      "entries": [
+        {
+          "level": "6",
+          "pinyin": "lǜ"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "shuài"
+        }
+      ]
+    },
+    {
+      "hanzi": "撒",
+      "entries": [
+        {
+          "level": "6",
+          "pinyin": "sǎ"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "sā"
+        }
+      ]
+    },
+    {
+      "hanzi": "地道",
+      "entries": [
+        {
+          "level": "6",
+          "pinyin": "dìdao"
+        },
+        {
+          "level": "7-9",
+          "pinyin": "dìdào"
+        }
+      ]
+    }
+  ],
+  "supplementedAudioEntries": [
+    "1:一下",
+    "4:一下"
+  ],
+  "supplementFile": "audio-audit/cmn-一下.mp3",
+  "playableAudioFilesWithSupplement": 10901,
+  "audioMeaningVerified": false,
+  "note": "Structural checks do not certify that every recording speaks the displayed pronunciation. Shared recordings for the listed multiple readings are withheld."
+}

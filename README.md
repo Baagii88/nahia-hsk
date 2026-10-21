@@ -44,3 +44,12 @@ python -m http.server 4175 --directory dist
 AnkiDroid-ийн smooth-path бичгийн самбарын логикийг JavaScript руу хөрвүүлэв. Anki-xiehanzi сангийн Hanzi Writer хөдөлгүүр, ханзын зураас, HSK мэдээлэл, бүтцийн тайлбар, язгуурын өгөгдлийг Нахиагийн интерфэйстэй холбов. Android-ийн натив дэлгэц, AnkiWeb синк, Android APK энэ вэб хувилбарт багтаагүй.
 
 Нахиа Studio 2: **AGPL-3.0-or-later**, бүрэн эх нь энэ repository-д нээлттэй. [COPYING](COPYING), [THIRD-PARTY.md](THIRD-PARTY.md), [DATA-LICENSE.md](DATA-LICENSE.md). Анхны v1 кодын MIT мэдэгдэл [LICENSE.v1-MIT](LICENSE.v1-MIT)-д хадгалагдсан.
+
+
+## Studio 2.1
+
+HSK writing now follows the selected level and exposes every word and character. Exact level-specific pinyin and matching dictionary readings are used; shared recordings for 43 cross-level polyphones are withheld pending listening review. The missing 一下 clip is supplemented with Google Translate synthesized Chinese speech, with provenance in `audio-audit/`.
+
+21 Nahia-authored Mongolian grammar lessons and four starter reading materials are included. The personal library stores PDF, EPUB, DOCX, TXT, Markdown and HTML locally in IndexedDB. EPUB/DOCX/HTML are reduced to safe text; PDF uses the browser viewer with a download fallback. Files do not sync between devices.
+
+Run `python audit-data.py` for structural coverage; with the supplied sibling source folders present it also compares every HSK character path and vocabulary entry with the original data. `python decode-audio.py` requires FFmpeg and an existing `dist/` build. Structural and decoder checks do not certify every recording’s spoken reading.

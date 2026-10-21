@@ -34,3 +34,8 @@ https://www.chinesetest.cn/
 
 ### YCT word lists
 https://www.chinesetest.cn/
+
+
+## Supplemental synthesized audio
+
+`audio-audit/cmn-一下.mp3` was downloaded from Google Translate Chinese TTS on 2026-10-21 at the user’s request. It is synthesized speech and is separate from the original audio corpus. Source URL and checksum are recorded in `audio-audit/google-translate-source.json`.
