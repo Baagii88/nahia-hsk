@@ -2,3 +2,6 @@ dist/
 __pycache__/
 .env
 .env.*
+node_modules/
+.test-build/
+vendor/
