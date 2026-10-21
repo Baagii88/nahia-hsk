@@ -53,3 +53,6 @@ HSK writing now follows the selected level and exposes every word and character.
 21 Nahia-authored Mongolian grammar lessons and four starter reading materials are included. The personal library stores PDF, EPUB, DOCX, TXT, Markdown and HTML locally in IndexedDB. EPUB/DOCX/HTML are reduced to safe text; PDF uses the browser viewer with a download fallback. Files do not sync between devices.
 
 Run `python audit-data.py` for structural coverage; with the supplied sibling source folders present it also compares every HSK character path and vocabulary entry with the original data. `python decode-audio.py` requires FFmpeg and an existing `dist/` build. Structural and decoder checks do not certify every recording’s spoken reading.
+
+
+Studio 2.1.1 corrects the contextual traditional form of grammatical `了 le` to `了` (not `瞭`), identifies the audio filename by the HSK form and explicitly distinguishes file availability from listening verification. The shared 了 recording is withheld pending a pronunciation-specific review. `python audit-orthography.py --output PATH` produces a full script-pair/audio-link CSV; source pairs are not presented as independently verified conversions. References: https://stroke-order.learningweb.moe.edu.tw/dictMean.jsp?ID=20102&la=0 and https://dict.variants.moe.edu.tw/dictView.jsp?ID=30045 .

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import JSZip from 'jszip';
-import {wordForWriting,matchingReading,displayTones,audioIssue,pronunciationKey} from '../pronunciation.mjs';
+import {wordForWriting,matchingReading,displayTones,audioIssue,pronunciationKey,traditionalFor,formLabel} from '../pronunciation.mjs';
 const words=JSON.parse(await readFile(new URL('../words.json',import.meta.url),'utf8'));
 const assets=await JSZip.loadAsync(await readFile(new URL('../studio-assets.zip',import.meta.url)));
 const rich=JSON.parse(await assets.file('data/learning.json').async('string')).words;
@@ -21,4 +21,10 @@ test('Shared recordings cannot be used for different level-specific pronunciatio
  const groups=new Map();for(const w of words){if(!groups.has(w.hanzi))groups.set(w.hanzi,[]);groups.get(w.hanzi).push(w)}
  let count=0;for(const list of groups.values())if(new Set(list.map(w=>pronunciationKey(w.pinyin))).size>1){count++;for(const w of list)assert.equal(audioIssue(w,words),'multiple')}
  assert.equal(count,43);assert.equal(audioIssue(words.find(w=>w.hanzi==='一下'),words),null);assert.equal(audioIssue(words.find(w=>w.hanzi==='学习'),words),null);
+});
+
+test('Grammatical le has the shared form 了, never 瞭; its unreviewed polyphonic audio is withheld',()=>{
+ const w=words.find(w=>w.id==='1:了');assert.equal(w.traditional,'瞭');assert.equal(traditionalFor(w),'了');assert.equal(formLabel(w),'Энэ үгийн хоёр бичлэг ижил');assert.equal(audioIssue(w,words),'multiple');
+ const understand=words.find(w=>w.hanzi==='了解');assert.equal(traditionalFor(understand),'瞭解');
+ assert.equal(traditionalFor({hanzi:'瞭',pinyin:'liào'}),'');assert.equal(formLabel({hanzi:'瞭',pinyin:'liào'}),'Бичлэгийн холбоос тодорхойгүй');
 });

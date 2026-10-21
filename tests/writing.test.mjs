@@ -15,6 +15,7 @@ test('Every level can browse all words and each unique character, including the 
     assert.equal(entries.length,list.length);assert.equal(entries.at(-1).id,list.at(-1).id);
     assert.equal(chars.length,new Set(list.flatMap(w=>hanCharacters(w.hanzi))).size);
     assert.equal(new Set(chars.map(w=>w.hanzi)).size,chars.length);
+    for(const c of chars){const exact=list.find(w=>w.hanzi===c.hanzi)||words.find(w=>w.hanzi===c.hanzi);assert.equal(c.traditional,exact?.traditional)}
   }
   assert.ok(searchWriting(writingEntries(words,'1'),'xue').some(w=>w.hanzi==='学习'));
 });

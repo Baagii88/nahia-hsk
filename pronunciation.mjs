@@ -8,6 +8,7 @@ export function matchingReading(word,info) {
   return [info,...(info.r||[])].find(r=>pronunciationKey(r.y)===pronunciationKey(word.pinyin))||null;
 }
 export function audioIssue(word,words) {
+  if(word.hanzi==='了')return 'multiple'; // le / liao: shared recording has not been listening-reviewed.
   const readings=new Set(words.filter(w=>w.hanzi===word.hanzi).map(w=>pronunciationKey(w.pinyin)));
   if(readings.size>1)return 'multiple';
   if(!words.some(w=>w.hanzi===word.hanzi&&pronunciationKey(w.pinyin)===pronunciationKey(word.pinyin)&&w.level!=='custom'))return 'unlisted';
@@ -23,4 +24,13 @@ export function displayTones(word,info) {
   const marks=[...text].filter(c=>'\u0304\u0301\u030c\u0300'.includes(c));
   if(marks.length===[...word.hanzi].length)return marks.map(c=>'\u0304\u0301\u030c\u0300'.indexOf(c)+1);
   return [];
+}
+// Traditional form is contextual: grammatical le stays 了 in both scripts.
+export function traditionalFor(word) {
+  if(word.hanzi==='了'&&pronunciationKey(word.pinyin)==='le')return '了';
+  return word.traditional||'';
+}
+export function formLabel(word) {
+  if(!traditionalFor(word))return 'Бичлэгийн холбоос тодорхойгүй';
+  return traditionalFor(word)===word.hanzi?'Энэ үгийн хоёр бичлэг ижил':'Эх тольд хоёр бичлэг ялгаатай';
 }

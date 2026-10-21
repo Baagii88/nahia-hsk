@@ -6,7 +6,7 @@ export function writingEntries(words, level, mode='words') {
   for(const word of list)for(const char of hanCharacters(word.hanzi)){
     if(seen.has(char))continue;seen.add(char);
     const exact=list.find(w=>w.hanzi===char)||words.find(w=>w.hanzi===char);
-    entries.push({id:`hanzi:${level}:${char}`,hanzi:char,level,pinyin:exact?.pinyin||'',meaning:exact?.meaning||'',sample:word.hanzi});
+    entries.push({id:`hanzi:${level}:${char}`,hanzi:char,level,traditional:exact?.traditional,pinyin:exact?.pinyin||'',meaning:exact?.meaning||'',sample:word.hanzi});
   }
   return entries;
 }
