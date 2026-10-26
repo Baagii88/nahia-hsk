@@ -6,7 +6,7 @@ import json
 root = Path(__file__).resolve().parent
 out = root / 'dist'
 (out / 'data').mkdir(parents=True, exist_ok=True)
-for name in ['index.html','app.js','studio.js','courses.js','courses.css','dictionary.js','school.js','library.js','school-library.css','styles.css','studio.css','sw.js','manifest.webmanifest','icon.svg','DATA-LICENSE.md','THIRD-PARTY.md','COPYING']:
+for name in ['index.html','app.js','studio.js','courses.js','courses.css','learn.js','learn.css','dictionary.js','school.js','library.js','school-library.css','styles.css','studio.css','sw.js','manifest.webmanifest','icon.svg','DATA-LICENSE.md','THIRD-PARTY.md','COPYING']:
     shutil.copy2(root / name, out / name)
 for name in ['words.json','grammar.json','grammar-mn.json','courses.json','course-files.json','character-dictionary.json']:
     shutil.copy2(root / name, out / 'data' / name)

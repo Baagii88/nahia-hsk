@@ -36,6 +36,7 @@ jobs:
           node --check library.js
           node --check courses.js
           node --check dictionary.js
+          node --check learn.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

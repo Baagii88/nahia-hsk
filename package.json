@@ -1,6 +1,6 @@
 {
   "name": "nahia-hsk",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,5 +14,8 @@
     "sql.js": "1.15.1",
     "ts-fsrs": "5.4.2"
   },
-  "devDependencies": { "esbuild": "0.28.2" }
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "fake-indexeddb": "6.2.6"
+  }
 }

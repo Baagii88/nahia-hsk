@@ -1,3 +1,6 @@
+import * as learn from './learn-model.mjs';
+import {createCourseStore} from './course-store.mjs';
+import {importCoursePack} from './course-import.mjs';
 import * as course from './course-model.mjs';
 import * as review from './review-engine.mjs';
 import * as pronunciation from './pronunciation.mjs';
@@ -5,4 +8,4 @@ import * as writing from './writing-model.mjs';
 import JSZip from 'jszip';
 import initSqlJs from 'sql.js';
 import { exportDeck, readDeck } from './anki-service.mjs';
-window.Learning = { course, review, writing, pronunciation, JSZip, initSqlJs, exportDeck, readDeck };
+window.Learning = { learn, createCourseStore, importCoursePack, course, review, writing, pronunciation, JSZip, initSqlJs, exportDeck, readDeck };
