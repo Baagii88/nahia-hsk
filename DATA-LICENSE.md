@@ -39,3 +39,11 @@ https://www.chinesetest.cn/
 ## Supplemental synthesized audio
 
 `audio-audit/cmn-一下.mp3` was downloaded from Google Translate Chinese TTS on 2026-10-21 at the user’s request. It is synthesized speech and is separate from the original audio corpus. Source URL and checksum are recorded in `audio-audit/google-translate-source.json`.
+
+## Nahia 3.0 supplements
+
+`audio-google-01.zip` through `audio-google-12.zip` contain 3,021 Google Translate Chinese synthesized recordings downloaded at the user's request. `audio-catalog.json` records query text, URL, SHA256, byte size, synthesis status and download date for each asset. Character recordings use Chinese characters; polyphonic examples use complete contextual Chinese sentences and are labeled as examples in the UI. These are separate from the original audio corpus.
+
+`character-dictionary.json` derives from the supplied CC-CEDICT dictionary; CC BY-SA 4.0 attribution and license apply as listed above. The original dictionary definitions remain in English.
+
+`courses.json` contains publisher catalog metadata and Nahia-authored lessons. `course-files.json` contains relative filenames/associations only. Publisher textbook/workbook PDFs and chapter recordings stay local and are not included in the public repository or Pages deployment. Users supply their own books.

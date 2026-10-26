@@ -1,19 +1,26 @@
+import audioMap from './audio-map.json' with {type:'json'};
+import characters from './character-dictionary.json' with {type:'json'};
 // Pronunciation keys retain tones and ü; spacing and apostrophes are editorial.
 export const pronunciationKey=value=>String(value||'').normalize('NFC').toLowerCase().replace(/[\s'’·-]/g,'');
+export function numberedPinyin(value){return String(value||'').split(/\s+/).map(s=>{s=s.replace(/u:/g,'ü').replace(/v/g,'ü');const tone=Number(s.match(/[1-5]$/)?.[0])||5;let base=s.replace(/[1-5]$/,'');if(tone===5)return base;let at=base.indexOf('a');if(at<0)at=base.indexOf('e');if(at<0&&base.includes('ou'))at=base.indexOf('o');if(at<0)for(let i=base.length-1;i>=0;i--)if('iouü'.includes(base[i])){at=i;break}if(at<0)return base;const table={a:'āáǎà',e:'ēéěè',i:'īíǐì',o:'ōóǒò',u:'ūúǔù','ü':'ǖǘǚǜ'};return base.slice(0,at)+(table[base[at]]?.[tone-1]||base[at])+base.slice(at+1)}).join(' ')}
+export function characterInfo(hanzi){return characters[hanzi]||null}
 export function wordForWriting(words,level,hanzi,entries=[]) {
-  return entries.find(w=>w.hanzi===hanzi)||words.find(w=>w.hanzi===hanzi&&w.level===level)||words.find(w=>w.hanzi===hanzi)||{id:'write:'+hanzi,hanzi,level,pinyin:'',meaning:''};
+ const found=entries.find(w=>w.hanzi===hanzi)||words.find(w=>w.hanzi===hanzi&&w.level===level)||words.find(w=>w.hanzi===hanzi),info=characterInfo(hanzi);
+ const w=found||{id:'write:'+hanzi,hanzi,level,pinyin:'',meaning:''};
+ if(info&&!w.pinyin)return {...w,pinyin:numberedPinyin(info.primary||info.p[0]),meaning:info.definitions[info.primary||info.p[0]]||'',traditional:hanzi==='了'?'了':info.traditional};
+ return w;
 }
+export function audioFor(word,words=[]) {
+ const example=audioMap.examples[word.hanzi+'|'+pronunciationKey(word.pinyin)];if(example)return{...example,kind:'example'};
+ if(audioMap.characters.includes(word.hanzi)||words.some(w=>w.hanzi===word.hanzi&&pronunciationKey(w.pinyin)===pronunciationKey(word.pinyin)&&w.level!=='custom'))return{file:'audio/cmn-'+word.hanzi+'.mp3',kind:'word',text:word.hanzi};
+ return null;
+}
+export function exampleFor(hanzi,pinyin){return audioMap.examples[hanzi+'|'+pronunciationKey(pinyin)]||null}
 export function matchingReading(word,info) {
   if(!info)return null;
   return [info,...(info.r||[])].find(r=>pronunciationKey(r.y)===pronunciationKey(word.pinyin))||null;
 }
-export function audioIssue(word,words) {
-  if(word.hanzi==='了')return 'multiple'; // le / liao: shared recording has not been listening-reviewed.
-  const readings=new Set(words.filter(w=>w.hanzi===word.hanzi).map(w=>pronunciationKey(w.pinyin)));
-  if(readings.size>1)return 'multiple';
-  if(!words.some(w=>w.hanzi===word.hanzi&&pronunciationKey(w.pinyin)===pronunciationKey(word.pinyin)&&w.level!=='custom'))return 'unlisted';
-  return null;
-}
+export function audioIssue(word,words) {return audioFor(word,words)?null:'unlisted'}
 // Use the displayed reading's tones, never the dictionary's first pronunciation.
 export function displayTones(word,info) {
   const reading=matchingReading(word,info);

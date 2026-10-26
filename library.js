@@ -31,7 +31,7 @@ window.Library=(()=>{
  document.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.book)return open(b.dataset.book);if(b.dataset.deleteBook){if(!confirm('Энэ төхөөрөмжөөс номыг устгах уу? Эх файлаас дахин нэмж болно.'))return;await transaction('readwrite',s=>s.delete(b.dataset.deleteBook));books=books.filter(x=>x.id!==b.dataset.deleteBook);render();return}switch(b.dataset.library){case'upload':$('#library-files').click();break;case'close':close();break;case'smaller':case'larger':font=Math.min(30,Math.max(14,font+(b.dataset.library==='larger'?2:-2)));$('#book-content').style.fontSize=font+'px';break;case'download':{if(!current)return;const url=URL.createObjectURL(current.blob||new Blob([current.text],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=current.filename||current.title+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);break}}});
  document.addEventListener('change',e=>{if(e.target.id==='library-files')add([...e.target.files]);if(e.target.id==='library-category'){category=e.target.value;render()}});
  document.addEventListener('input',e=>{if(e.target.id==='library-search'){query=e.target.value;const at=e.target.selectionStart;render();$('#library-search').focus();$('#library-search').setSelectionRange(at,at)}});
- return{afterRender};
+ return{afterRender,readText:plainBook};
 })();
 
 if(words.length)render();

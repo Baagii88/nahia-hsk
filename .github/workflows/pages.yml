@@ -34,6 +34,8 @@ jobs:
           node --check studio.js
           node --check school.js
           node --check library.js
+          node --check courses.js
+          node --check dictionary.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

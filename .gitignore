@@ -5,3 +5,10 @@ __pycache__/
 node_modules/
 .test-build/
 vendor/
+
+audio-work/
+
+inspect-selected-books.py
+inspect-toc-ocr.py
+integrate-audio-player.py
+scan-publisher-toc.py

@@ -55,4 +55,21 @@ HSK writing now follows the selected level and exposes every word and character.
 Run `python audit-data.py` for structural coverage; with the supplied sibling source folders present it also compares every HSK character path and vocabulary entry with the original data. `python decode-audio.py` requires FFmpeg and an existing `dist/` build. Structural and decoder checks do not certify every recording’s spoken reading.
 
 
-Studio 2.1.1 corrects the contextual traditional form of grammatical `了 le` to `了` (not `瞭`), identifies the audio filename by the HSK form and explicitly distinguishes file availability from listening verification. The shared 了 recording is withheld pending a pronunciation-specific review. `python audit-orthography.py --output PATH` produces a full script-pair/audio-link CSV; source pairs are not presented as independently verified conversions. References: https://stroke-order.learningweb.moe.edu.tw/dictMean.jsp?ID=20102&la=0 and https://dict.variants.moe.edu.tw/dictView.jsp?ID=30045 .
+Нахиа 3.0 нь 3,021 Google Translate нийлэг аудио, олон дуудлагатай үгийн тусдаа жишээ өгүүлбэр, эх толийн дэлгэрэнгүй тайлбар, номоор сурах хэсэгтэй. Туслах үг 了 le-г 我吃饭了。 өгүүлбэрээр сонсоно.
+
+## Номоор сурах
+
+[Номоор сурах](https://baagii88.github.io/nahia-hsk/#courses) хэсэгт Textbook → Сонсох → Workbook → Тест гэсэн дараалалтай. Нахиагийн Монгол тайлбартай 21 хичээл, 63 тестийн асуулт шууд ашиглагдана. Номын хувилбаруудыг тусад нь сонгоно.
+
+Өгсөн эх хавтасны хуучин HSK-ийн 9 боть, шинэ HSK 1–3-ын 12 сурах бичиг, хуучин HSK-ийн 9 Workbook болон бүлгийн 1,215 аудио файлын холбоос бэлэн. Эх номууд олон нийтэд байршаагүй; «Номын хавтас холбох»-д HSK all books хавтсыг сонгох, эсвэл `.nahia-course.zip` багц импортлоно. Хөтөч тэдгээрийг тухайн төхөөрөмжийн IndexedDB санд хадгална. Шинэ HSK 1–3-ын Workbook, шинэ HSK 4–9-ийн эх файлууд өгсөн хавтаст байхгүй; тэдгээрийг дараа оруулна.
+
+Номын дасгалыг PDF дээр уншиж дэвтэрт ажиллан, өөрөө шалгасан оноо, тэмдэглэл хадгална. Нахиагийн хичээлийн дасгал, тест автоматаар шалгагдана. Сканнердсан хэвлэлийн бүх дасгал интерактив хэлбэрт хөрвөөгүй. Шинэ HSK 1-ийн Textbook, хуучин HSK 1-ийн Workbook-ийн эхлэх хуудсуудыг эхтэй тулгасан; бусад бүлгийн хуудсыг «Бүлэг тохируулах»-д PDF-ийн дугаараар тохируулна.
+
+«Багцаа татах» нь ном, аудио, ахицыг хамтад нь экспортлоно. Автомат үүлэн синк байхгүй. 1 GB хүртэл багц импортлоно; том багцыг компьютероор оруулах, эсвэл ном/бүлгийн аудиог хэсэгчлэн оруулах нь утасны санах ойд тохиромжтой.
+
+## Баталгаажуулалт
+
+`npm test` · `npm run build` · `python verify-assets.py` (FFmpeg шаардлагатай; эх номын локал 12 багцтай үед багцуудыг давхар шалгана).
+3,021 нэмэлт аудионы SHA256, ZIP CRC болон FFmpeg задлал шалгагдсан. Энэ нь бичлэг бүрийн дуудлагыг хүн сонсож баталгаажуулсан гэсэн үг биш. Бүх 3,088 хялбаршуулсан HSK ханз зураас болон аудио руу холбогдоно. Эх аудионы гарал, нэмэлт TTS-ийн URL/огноо/хэш `audio-catalog.json`-д бүртгэлтэй.
+
+Локал номын багц дахин бэлтгэхдээ `python prepare-book-packs.py "HSK all books хавтасны бүтэн зам"` ажиллуулна. Эх файлыг өөрчлөхгүй. Багцууд Git checkout-ын гаднах `Nahia-Book-Packs` хавтаст үүснэ.

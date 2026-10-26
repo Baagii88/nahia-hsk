@@ -1,5 +1,5 @@
-const CACHE='nahia-v2.1.1';
-const SHELL=['./','./index.html','./styles.css','./studio.css','./app.js','./studio.js','./school.js','./library.js','./school-library.css','./data/grammar-mn.json','./icon.svg','./manifest.webmanifest','./data/words.json','./data/grammar.json','./data/learning.json','./vendor/learning.js','./vendor/hanzi-writer.js','./vendor/sql-wasm.wasm'];
+const CACHE='nahia-v3.0.0';
+const SHELL=['./','./index.html','./styles.css','./studio.css','./app.js','./studio.js','./dictionary.js','./courses.js','./courses.css','./data/courses.json','./data/course-files.json','./data/character-dictionary.json','./school.js','./library.js','./school-library.css','./data/grammar-mn.json','./icon.svg','./manifest.webmanifest','./data/words.json','./data/grammar.json','./data/learning.json','./vendor/learning.js','./vendor/hanzi-writer.js','./vendor/sql-wasm.wasm'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)));self.skipWaiting()});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('nahia-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{

@@ -1,0 +1,11 @@
+export function normalizeAnswer(value){return String(value??'').normalize('NFKC').trim().toLowerCase().replace(/[\s。！？!?，,.]/g,'')}
+export function gradeQuestions(questions,answers){let correct=0;const results=questions.map((q,i)=>{const ok=q.options?answers[i]!==undefined&&answers[i]!==null&&answers[i]!==''&&Number(answers[i])===q.correct:normalizeAnswer(answers[i])===normalizeAnswer(q.answer);if(ok)correct++;return{correct:ok,answer:q.options?q.options[q.correct]:q.answer,explanation:q.explanation||''}});return{correct,total:questions.length,percent:questions.length?Math.round(correct/questions.length*100):0,results}}
+export function cleanCourse(raw){
+ if(!raw||typeof raw.title!=='string'||!raw.title.trim()||!Array.isArray(raw.units)||raw.units.length>500)throw Error('Хичээлийн багцын бүтэц буруу байна.');
+ const str=(v,n=1000)=>String(v??'').slice(0,n);
+ const id=v=>{const s=str(v,100);if(!/^[\w-]+$/.test(s))throw Error('Хичээлийн дугаар буруу.');return s};
+ const units=raw.units.map(u=>({id:id(u.id),title:str(u.title),body:str(u.body,100000),zh:str(u.zh,20000),pinyin:str(u.pinyin,20000),mn:str(u.mn,20000),textbookPage:Math.max(1,Math.min(10000,Number(u.textbookPage)||1)),workbookPage:Math.max(1,Math.min(10000,Number(u.workbookPage)||1)),textbookPageKnown:!!u.textbookPageKnown,workbookPageKnown:!!u.workbookPageKnown,audio:/^audio\/[a-zA-Z0-9-]+\.mp3$/.test(u.audio||'')?str(u.audio):'',exercises:(u.exercises||[]).slice(0,200).map(q=>({prompt:str(q.prompt,3000),answer:str(q.answer,3000),explanation:str(q.explanation,5000)})),test:(u.test||[]).slice(0,200).map(q=>{if(!Array.isArray(q.options)||q.options.length<2||q.options.length>6||!Number.isInteger(q.correct)||q.correct<0||q.correct>=q.options.length)throw Error('Тестийн хариултын бүтэц буруу.');return{prompt:str(q.prompt,3000),options:q.options.map(x=>str(x,5000)),correct:q.correct,explanation:str(q.explanation,5000)}})}));
+ if(new Set(units.map(u=>u.id)).size!==units.length)throw Error('Бүлгийн дугаар давхардсан.');
+ return{id:id(raw.id),title:str(raw.title),edition:['old','new','nahia','custom'].includes(raw.edition)?raw.edition:'custom',level:str(raw.level,20),source:/^https?:\/\//i.test(raw.source||'')?str(raw.source,2000):'',units,builtin:!!raw.builtin};
+}
+export function assetNameSafe(id){return typeof id==='string'&&/^[\w-]{1,100}$/.test(id)}
