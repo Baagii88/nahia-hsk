@@ -47,3 +47,7 @@ https://www.chinesetest.cn/
 `character-dictionary.json` derives from the supplied CC-CEDICT dictionary; CC BY-SA 4.0 attribution and license apply as listed above. The original dictionary definitions remain in English.
 
 `courses.json` contains publisher catalog metadata and Nahia-authored lessons. `course-files.json` contains relative filenames/associations only. Publisher textbook/workbook PDFs and chapter recordings stay local and are not included in the public repository or Pages deployment. Users supply their own books.
+
+## Mongolian translation layer
+
+`mn-translations.json` and `word-mn.json` are Mongolian translations derived from the English definitions of the vocabulary/CC-CEDICT sources credited above. Original English definitions remain intact and visible. The same applicable attribution/share-alike requirements follow the source material. Most Mongolian text was machine-translated with Google Translate; existing authored Mongolian glosses and a small correction list are retained. `machineTranslated` and `manualCorrections` are recorded in the dictionary translation file. These translations have not all been reviewed individually by a human. `translate-mn.py` records the reproducible input selection and translation association checks; only public source definitions are sent, not personal user documents.

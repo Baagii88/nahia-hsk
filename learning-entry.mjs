@@ -1,3 +1,6 @@
+import {wordMeaning,setDefinitionTranslations} from './translations.mjs';
+import courseCatalog from './courses.json' with {type:'json'};
+import {readSavedCourses,withTimeout} from './course-loader.mjs';
 import * as learn from './learn-model.mjs';
 import {createCourseStore} from './course-store.mjs';
 import {importCoursePack} from './course-import.mjs';
@@ -8,4 +11,4 @@ import * as writing from './writing-model.mjs';
 import JSZip from 'jszip';
 import initSqlJs from 'sql.js';
 import { exportDeck, readDeck } from './anki-service.mjs';
-window.Learning = { learn, createCourseStore, importCoursePack, course, review, writing, pronunciation, JSZip, initSqlJs, exportDeck, readDeck };
+window.Learning = { wordMeaning, setDefinitionTranslations, courseCatalog, readSavedCourses, withTimeout, learn, createCourseStore, importCoursePack, course, review, writing, pronunciation, JSZip, initSqlJs, exportDeck, readDeck };
