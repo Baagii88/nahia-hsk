@@ -30,3 +30,8 @@ Third-party library legal notices are retained in vendor/learning.js. Full sourc
 ## Scope of Anki interoperability
 
 Nahia exports classic .apkg with new cards, optional available MP3s and offline stroke practice. It imports note text from uncompressed classic collections up to 1000 notes. Modern zstd/protobuf .anki21b packages must first be exported with Anki's older-version compatibility setting. Imported HTML is reduced to plain text; arbitrary templates, embedded scripts and media are not executed. Scheduling history is not imported/exported and AnkiWeb sync is not implemented.
+
+## PDF reader
+
+- PDF.js / pdfjs-dist 6.4.299: Apache-2.0, Copyright Mozilla Foundation and contributors. https://github.com/mozilla/pdf.js . Reader and dedicated worker are bundled locally; CMaps, standard fonts, decoder WASM/ICC resources and the PDF.js license are copied under vendor/pdf/. No publisher PDF is bundled or uploaded to the public site.
+- @napi-rs/canvas is an optional PDF.js dependency used by the Node regression/rendering tests, not by the browser reader. Its package license and notices remain in node_modules during local/CI installation.

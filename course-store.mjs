@@ -1,3 +1,4 @@
+import {typedAsset} from './media.mjs';
 // Keep file metadata separate; listing courses never clones all PDF/audio Blobs.
 export function createCourseStore(factory=globalThis.indexedDB,name='nahia-courses',{openTimeout=6000}={}){
  let promise;
@@ -18,10 +19,10 @@ export function createCourseStore(factory=globalThis.indexedDB,name='nahia-cours
  return{
   courses:()=>run(['courses'],'readonly',t=>t.objectStore('courses').getAll()),
   metadata:()=>run(['asset-meta'],'readonly',t=>t.objectStore('asset-meta').getAll()),
-  get:id=>run(['assets'],'readonly',t=>t.objectStore('assets').get(id)),
+  get:id=>run(['assets'],'readonly',t=>t.objectStore('assets').get(id)).then(typedAsset),
   course:c=>run(['courses'],'readwrite',t=>t.objectStore('courses').put(c)),
-  put:a=>run(['assets','asset-meta'],'readwrite',t=>{t.objectStore('assets').put(a);t.objectStore('asset-meta').put(meta(a))}),
-  stage:a=>run(['assets'],'readwrite',t=>t.objectStore('assets').put(a)),
+  put:a=>run(['assets','asset-meta'],'readwrite',t=>{t.objectStore('assets').put(typedAsset(a));t.objectStore('asset-meta').put(meta(a))}),
+  stage:a=>run(['assets'],'readwrite',t=>t.objectStore('assets').put(typedAsset(a))),
   discard:ids=>run(['assets'],'readwrite',t=>{for(const id of ids)t.objectStore('assets').delete(id)}),
   commit:(course,files,oldIds)=>run(['courses','assets','asset-meta'],'readwrite',t=>{t.objectStore('courses').put(course);for(const id of oldIds){t.objectStore('assets').delete(id);t.objectStore('asset-meta').delete(id)}for(const f of files)t.objectStore('asset-meta').put(meta(f))}),
   close:async()=>{(await db()).close();promise=undefined}

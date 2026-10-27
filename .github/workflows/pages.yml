@@ -38,6 +38,7 @@ jobs:
           node --check dictionary.js
           node --check learn.js
           node --check translations.js
+          node --check pdf-books.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
