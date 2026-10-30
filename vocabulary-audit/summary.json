@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-30",
+  "entries": 11073,
+  "levels": {
+    "1": 301,
+    "2": 203,
+    "3": 506,
+    "4": 1016,
+    "5": 1632,
+    "6": 1810,
+    "7-9": 5605
+  },
+  "mongolianCovered": 11073,
+  "englishCovered": 11073,
+  "pinyinCovered": 11073,
+  "audioFiles": 13922,
+  "wordAudioCovered": 11073,
+  "characterAudioCovered": 3088,
+  "contextualWordAudio": 93,
+  "manualCorrections": 13,
+  "source2025": {
+    "hsk1": {
+      "sourceEntries": 301,
+      "missing": [],
+      "extra": []
+    },
+    "hsk2": {
+      "sourceEntries": 203,
+      "missing": [],
+      "extra": []
+    },
+    "hsk3": {
+      "sourceEntries": 506,
+      "missing": [],
+      "extra": []
+    },
+    "hsk4": {
+      "sourceEntries": 1016,
+      "missing": [],
+      "extra": []
+    },
+    "hsk5": {
+      "sourceEntries": 1632,
+      "missing": [],
+      "extra": []
+    },
+    "hsk6": {
+      "sourceEntries": 1810,
+      "missing": [],
+      "extra": []
+    },
+    "hsk7-9": {
+      "sourceEntries": 5605,
+      "missing": [],
+      "extra": []
+    }
+  },
+  "alternate2021Entries": 1250,
+  "alternate2021UniqueWords": 1249,
+  "errors": [],
+  "allRecordingsListeningVerified": false,
+  "allMachineTranslationsHumanReviewed": false
+}

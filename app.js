@@ -12,7 +12,7 @@ function record(){const t=today();if(!state.days.includes(t))state.days.push(t);
 function streak(){let n=0,d=new Date();if(!state.days.includes(today()))d.setDate(d.getDate()-1);while(state.days.includes(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`)){n++;d.setDate(d.getDate()-1)}return n}
 function updateStreak(){$('#streak').textContent=`✦ ${streak()} өдөр`}
 const levelWords=()=>window.Studio?Studio.currentWords():words.filter(w=>w.level===state.level);
-const meaning=w=>(MN[w.hanzi]&&w.level===words.find(x=>x.hanzi===w.hanzi)?.level&&w.pinyin===words.find(x=>x.hanzi===w.hanzi)?.pinyin?MN[w.hanzi]:(Learning.wordMeaning?.(w)||w.meaning))||'Тайлбар байхгүй';
+const meaning=w=>Learning.wordMeaning?.(w)||w.meaning||MN[w.hanzi]||'Тайлбар байхгүй';
 function meaningPair(w,wrap=true){const mn=meaning(w),en=w.meaning||'',html=`<span lang="mn">${esc(mn)}</span>${en&&en!==mn?`<small class="en-meaning" lang="en">${esc(en)}</small>`:''}`;return wrap?`<span data-meaning-id="${esc(w.id)}" data-meaning-source="${esc(en)}">${html}</span>`:html}
 
 const title=(small,big,sub='')=>`<div class="page-title"><div><div class="eyebrow">${small}</div><h1>${big}</h1><div class="sub">${sub}</div></div><span class="badge">${window.Studio?.context()?esc(Studio.context().name):'HSK '+esc(state.level)}</span></div>`;

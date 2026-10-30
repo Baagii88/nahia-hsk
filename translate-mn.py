@@ -69,5 +69,6 @@ out=dict(provider='Google Translate',language='mn',sourceLanguage='en',machineTr
 manual=ast.literal_eval(re.search(r'const MN=(\{.*?\});',(root/'app.js').read_text('utf8'),re.S)[1]);first={}
 for w in words:first.setdefault(w['hanzi'],w['id'])
 word_map={w['id']:manual[w['hanzi']] if w['hanzi'] in manual and first[w['hanzi']]==w['id'] else result[w['meaning']] for w in words if w.get('meaning')}
+word_map.update(json.loads((root/'vocabulary-overrides.json').read_text('utf8')))
 (root/'word-mn.json').write_text(json.dumps(word_map,ensure_ascii=False,separators=(',',':')),'utf8',newline='\n')
 print('Completed:',len(result),'definitions;',len(words),'word records; English originals preserved.',flush=True)
